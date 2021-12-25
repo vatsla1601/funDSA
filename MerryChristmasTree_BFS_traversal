@@ -1,0 +1,105 @@
+import java.util.*;
+
+class Main
+{
+static class Node
+{
+	char key;
+	Vector<Node >child = new Vector<>();
+};
+
+
+static Node newNode(char key)
+{
+	Node temp = new Node();
+	temp.key = key;
+	return temp;
+}
+
+
+static void LevelOrderTraversal(Node root)
+{
+	if (root == null)
+		return;
+
+
+	Queue<Node > q = new LinkedList<>(); 
+	q.add(root); 
+	while (!q.isEmpty())
+	{
+		int n = q.size();
+
+		
+		while (n > 0)
+		{
+			
+			Node p = q.peek();
+			q.remove();
+			System.out.print(p.key + " ");
+
+			
+			for (int i = 0; i < p.child.size(); i++)
+				q.add(p.child.get(i));
+			n--;
+		}
+		
+		
+		System.out.println();
+	}
+	
+	
+}
+
+// Driver Code
+public static void main(String[] args)
+{
+	
+	Node root = newNode('*');
+	(root.child).add(newNode(' '));
+	(root.child).add(newNode(' '));
+	(root.child).add(newNode('M'));
+	(root.child).add(newNode('E'));
+	(root.child).add(newNode('R'));
+	(root.child).add(newNode('R'));
+	(root.child).add(newNode('Y'));
+	(root.child.get(0).child).add(newNode('C'));
+	(root.child.get(0).child).add(newNode('H'));
+	(root.child.get(1).child).add(newNode('R'));
+	(root.child.get(1).child).add(newNode('I'));
+	(root.child.get(2).child).add(newNode('S'));
+	(root.child.get(2).child).add(newNode('T'));
+	(root.child.get(3).child).add(newNode('M'));
+	(root.child.get(3).child).add(newNode('A'));
+	(root.child.get(3).child).add(newNode('S'));
+	(root.child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child).add(newNode('T'));
+	(root.child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child).add(newNode('R'));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode('E'));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode(' '));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode('E'));
+	(root.child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child.get(0).child).add(newNode('*'));
+
+
+	System.out.println("Level order traversal of unsorted tree: " +
+							"Merry Christmast");
+							System.out.println();
+	LevelOrderTraversal(root);
+}
+}
+
+OUTPUT:
+Readme: MerryChristmasTree_BFS_traversal
